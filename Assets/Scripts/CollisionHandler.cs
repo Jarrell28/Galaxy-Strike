@@ -2,20 +2,12 @@ using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] GameObject playerDestroyedVfx;
 
     void OnTriggerEnter(Collider other)
     {
-        
+        Instantiate(playerDestroyedVfx, transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 }
